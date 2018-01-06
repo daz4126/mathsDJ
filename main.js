@@ -25,10 +25,14 @@ const Equation = props => {
     const styles = {
       color: '#696969',
       fontFamily: 'serif',
+      padding: 2
     };
     const solution = props.a * props.x + props.b;
     return (
-      <h1 style={styles}>{props.a}<em>x</em> + {props.b} = {solution}, <em>x</em> = {props.x}</h1>
+      <div style={styles}>
+        <h1>{props.n}) \({props.a}x + {props.b} = {solution}\)</h1>
+        <p>Answer: \(x = {props.x}\)</p>
+      </div>
     );
 };
 
@@ -38,7 +42,7 @@ for(let i = 0; i < 10; i ++) {
   const a = random(10);
   const b = random(10);
   const x = random(20) - 10;
-  questions.push(<Equation a={a} b={b} x={x} />);
+  questions.push(<Equation a={a} b={b} x={x} n={i+1} />);
 }
 
 const App = () => {
