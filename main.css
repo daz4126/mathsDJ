@@ -1,0 +1,21 @@
+.test {
+  color: #696969;
+  font-family: 'serif';
+  font-size: 24px;
+  width: 600px;
+}
+
+.test .question{
+}
+
+.test .answer{
+  margin-top: 6em;
+  text-align: right;
+}
+
+.worksheet {
+  color: #696969;
+  font-family: 'serif';
+  font-size: 24px;
+  width: 600px;
+}
