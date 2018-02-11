@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=Monoton');
+@import 'pure-min';
+
+$blue: #20375F;
+$red: #B85258;
+$yellow: yellow;
+$grey: #696969;
+$white: #FFFFFF;
+$headingFont: 'Monoton', cursive;
+
+body {
+  background-color: $blue;
+  }
+
+header {
+  background-color: $blue;
+  padding: 0em 4em;
+  h1 {
+   color: $red;
+   font-family: $headingFont;
+   font-size: 72px;
+   line-height: 1.2;
+   letter-spacing: -1px;
+   margin: 0;
+   strong{
+    color: $yellow;
+    font-size: 96px;
+   }
+  }
+}
+
+.main {
+  background-color: #fff;
+  padding: 1em 4em;
+  button {
+   margin: 0 0.2em;
+   background-color: $blue;
+   color: $yellow;
+   &:hover {
+    background-color: $red;
+    color: $white;
+   }
+   i {
+     margin-right: 0.2em;
+   }
+  }
+  ol {
+    color: $grey;
+    font-family: 'serif';
+    font-size: 32px;
+    width: 600px;
+    li{
+      margin: 0.4em 0;
+    }
+  }
+
+}
+
+footer {
+  background-color: $blue;
+  color: $white;
+  padding: 1em 4em;
+  .fa-heart {
+    color: $red;
+  }
+  .fa-copyright {
+    color: $yellow;
+  }
+}
