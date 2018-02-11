@@ -26,6 +26,9 @@ node_modules
 # Server folder for Parcel
 dist
 
+# Cache for Parcel
+.cache
+
 # Apple stuff
 .DS_Store
 
