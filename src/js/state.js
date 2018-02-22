@@ -1,6 +1,9 @@
 import { createRandomQuestions } from './utils.js'
 
-export const state = {
+const state = {
+  questionType: 'Multiplication',
   questions: createRandomQuestions(),
-  showAnswer: false
+  showAnswer: false,
 }
+
+export default state;
