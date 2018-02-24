@@ -1,12 +1,22 @@
 import { h } from 'hyperapp'
 
-export const Multiplication = ({x, y, showAnswer = true, key}) => (
-    <li key={key}>{x} &times; {y} {showAnswer ? (<span>= {x*y}</span>) : null}</li>
+export const Multiplication = ({numbers, showAnswer = true, key}) => (
+    <li key={key}>{numbers[0]} &times; {numbers[1]} {showAnswer ? (<span>= {numbers[0]*numbers[1]}</span>) : null}</li>
  );
 
-export const Division = ({x, y, showAnswer = true, key}) =>  (
-      <li key={key}>{x*y} &divide; {y} {showAnswer ? (<span>= {x}</span>) : null}</li>
+export const Division = ({numbers, showAnswer = true, key}) =>  (
+      <li key={key}>{numbers[0]*numbers[1]} &divide; {numbers[1]} {showAnswer ? (<span>= {numbers[0]}</span>) : null}</li>
  );
+
+ export const Question = ({topic, numbers, showAnswer, key}) => {
+     const Question = topics[topic];
+     return <Question  numbers={numbers} showAnswer={showAnswer} key ={key} />;
+ }
+
+const topics = {
+    mult: Multiplication,
+    div: Division
+};
 
 export const MultiplicationObjTest = {
  name: 'multiplication',

@@ -1,7 +1,7 @@
 import { createRandomQuestions } from './utils.js'
 
 const state = {
-  questionType: 'Multiplication',
+  topic: 'mult',
   questions: createRandomQuestions(),
   showAnswer: false,
 }

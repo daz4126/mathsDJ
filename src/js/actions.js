@@ -1,7 +1,7 @@
 import { uuid, createRandomQuestions } from './utils.js'
 
 const actions = {
-  createQuestions: () => state => ({
+  mix: () => state => ({
     questions: createRandomQuestions()
   }),
   toggleShowAnswer: () => state => ({
@@ -11,7 +11,7 @@ const actions = {
   console.log('mathjaxifying')
   //MathJax.Hub.Queue(["Typeset",MathJax.Hub])
 },
-  changeQuestionsTo: () => alert('changeQuestionsTo')
+  changeTopic: topic => ({ topic: topic })
 };
 
 export default actions;
