@@ -11,7 +11,10 @@ const actions = {
   console.log('mathjaxifying')
   //MathJax.Hub.Queue(["Typeset",MathJax.Hub])
 },
-  changeTopic: topic => ({ topic: topic })
+  changeTopic: (topic,mix) => {
+    //mix();
+    return { topic: topic };
+  }
 };
 
 export default actions;
