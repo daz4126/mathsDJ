@@ -1,8 +1,8 @@
-import { createRandomQuestions } from './utils.js'
+import { mix } from './utils.js'
 
 const state = {
   topic: 'mult',
-  questions: createRandomQuestions(),
+  questions: mix(),
   showAnswer: false,
 }
 

@@ -6,9 +6,9 @@ const view = (state, actions) => (
   <div id='root'>
   <header>
   <h1>Maths <strong>DJ</strong></h1>
-  <button class="topic pure-button pure-button-primary" onclick={()=>actions.changeTopic('mult',actions.mix)}>Multiplication</button>
-  <button class="topic pure-button pure-button-primary" onclick={()=>actions.changeTopic('div',actions.mix)}>Division</button>
-  <button class="topic pure-button pure-button-primary" onclick={()=>actions.changeTopic('eqn',actions.mix)}>Equations</button>
+  <button class="topic pure-button pure-button-primary" onclick={()=>actions.changeTopic('mult')}>Multiplication</button>
+  <button class="topic pure-button pure-button-primary" onclick={()=>actions.changeTopic('div')}>Division</button>
+  <button class="topic pure-button pure-button-primary" onclick={()=>actions.changeTopic('eqn')}>Equations</button>
   </header>
   <div class='main'>
     <button class="pure-button pure-button-primary" onclick={actions.mix}><i class="fa fa-sync-alt"></i>MIX</button>
