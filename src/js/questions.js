@@ -1,15 +1,15 @@
 import { h } from 'hyperapp'
 
 export const Multiplication = ({numbers, showAnswer = true, key}) => (
-    <li key={key}>{numbers[0]} &times; {numbers[1]} {showAnswer ? (<span class='answer'>= {numbers[0]*numbers[1]}</span>) : null}</li>
+    <li key={key}>{numbers[0]} &times; {numbers[1]} {showAnswer ? (<div class='answer'>= {numbers[0]*numbers[1]}</div>) : null}</li>
  );
 
 export const Division = ({numbers, showAnswer = true, key}) =>  (
-      <li key={key}>{numbers[0]*numbers[1]} &divide; {numbers[1]} {showAnswer ? (<span class='answer'>= {numbers[0]}</span>) : null}</li>
+      <li key={key}>{numbers[0]*numbers[1]} &divide; {numbers[1]} {showAnswer ? (<div class='answer'>= {numbers[0]}</div>) : null}</li>
  );
 
  export const Equation = ({numbers, showAnswer = true, key}) =>  (
-       <li key={key}>{numbers[0]}<i>x</i> + {numbers[1]} = {numbers[0]*numbers[2] + numbers[1]} {showAnswer ? (<span class='answer'><i>x</i> = {numbers[2]}</span>) : null}</li>
+       <li key={key}>{numbers[0]===1 ? '' : numbers[0]}<i>x</i> + {numbers[1]} = {numbers[0]*numbers[2] + numbers[1]} {showAnswer ? (<div class='answer'><i>x</i> = {numbers[2]}</div>) : null}</li>
   );
 
  export const Question = ({topic, numbers, showAnswer, key}) => {
