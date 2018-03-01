@@ -14,7 +14,7 @@ body {
 
 header {
   background-color: $blue;
-  padding: 0em 4em;
+  padding: 0em 4em 1em;
   h1 {
    color: $red;
    font-family: $headingFont;
@@ -29,7 +29,7 @@ header {
   }
     button.topic {
      margin: 0 0.2em;
-     background-color: $white;
+     background-color: $yellow;
      color: $blue;
        &:hover {
         background-color: $red;
@@ -60,7 +60,7 @@ header {
     width: 600px;
     li{
       margin: 0.4em 0;
-      div.answer{
+      .answer{
         color: $red;
       }
     }

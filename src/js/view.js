@@ -7,14 +7,17 @@ const view = (state, actions) => (
   <div id='root'>
   <header>
   <h1>Maths <strong>DJ</strong></h1>
-  <button class="topic pure-button pure-button-primary" onclick={()=>actions.changeTopic('mult')}>Multiplication</button>
-  <button class="topic pure-button pure-button-primary" onclick={()=>actions.changeTopic('div')}>Division</button>
-  <button class="topic pure-button pure-button-primary" onclick={()=>actions.changeTopic('eqn')}>Equations</button>
-  <button class="topic pure-button pure-button-primary" onclick={()=>actions.changeTopic('percent')}>Percentages</button>
+  <div  id='topics'>
+   {
+     Object.entries(topics).map( ([key,topic]) =>
+     <button class="topic pure-button" onclick={()=>actions.changeTopic(key)}>{topic.name}</button>
+   )
+   }
+  </div>
   </header>
   <div class='main'>
-    <button class="pure-button pure-button-primary" onclick={ () => actions.mix(state.topic) }><i class="fa fa-sync-alt"></i>MIX</button>
-    <button class="pure-button pure-button-primary" onclick={actions.toggleShowAnswer}>{state.showAnswer ? <i class="fa fa-eye-slash"></i>:<i class="fa fa-eye"></i>}{state.showAnswer ? 'Hide Answers':'Show Answers'}</button>
+    <button class="pure-button" onclick={ () => actions.mix(state.topic) }><i class="fa fa-sync-alt"></i>MIX</button>
+    <button class="pure-button" onclick={actions.toggleShowAnswer}>{state.showAnswer ? <i class="fa fa-eye-slash"></i>:<i class="fa fa-eye"></i>}{state.showAnswer ? 'Hide Answers':'Show Answers'}</button>
 
     <ol  id='questions'>
      {state.questions.map((numbers,i) => (
@@ -24,7 +27,7 @@ const view = (state, actions) => (
   </div>
   <footer>
   <p>
-  Made with <i class="fa fa-heart"></i> & Hyperapp
+  Made in Manchester with <i class="fa fa-heart"></i> & Hyperapp
   </p>
   <p>
   <i class="fa fa-copyright"></i> Maths DJ 2018

@@ -7,11 +7,15 @@ import topics from './topics.js'
  };
 
 export const Multiplication = ({numbers, showAnswer = true, key}) => (
-    <li key={key}>{numbers[0]} &times; {numbers[1]} {showAnswer ? (<div class='answer'>= {numbers[0]*numbers[1]}</div>) : null}</li>
+    <li key={key}>{numbers[0]} &times; {numbers[1]} {showAnswer ? (<span class='answer'>= {numbers[0]*numbers[1]}</span>) : null}</li>
  );
 
+ export const MultDec = ({numbers, showAnswer = true, key}) => (
+     <li key={key}>{numbers[0]/10**(numbers[1]-3)} &times; {numbers[2]/10**(numbers[3]-3)} {showAnswer ? (<span class='answer'>= {numbers[0]*numbers[2]/10**(numbers[1]+numbers[3]-6)}</span>) : null}</li>
+  );
+
 export const Division = ({numbers, showAnswer = true, key}) =>  (
-      <li key={key}>{numbers[0]*numbers[1]} &divide; {numbers[1]} {showAnswer ? (<div class='answer'>= {numbers[0]}</div>) : null}</li>
+      <li key={key}>{numbers[0]*numbers[1]} &divide; {numbers[1]} {showAnswer ? (<span class='answer'>= {numbers[0]}</span>) : null}</li>
  );
 
  export const Equation = ({numbers, showAnswer = true, key}) =>  (
@@ -19,5 +23,5 @@ export const Division = ({numbers, showAnswer = true, key}) =>  (
   );
 
   export const Percent = ({numbers, showAnswer = true, key}) =>  (
-        <li key={key}>{numbers[0]*5}% of {20*numbers[1]} {showAnswer ? (<div class='answer'>= {numbers[1]*numbers[0]}</div>) : null}</li>
+        <li key={key}>{numbers[0]*5}% of {20*numbers[1]} {showAnswer ? (<span class='answer'>= {numbers[1]*numbers[0]}</span>) : null}</li>
    );
