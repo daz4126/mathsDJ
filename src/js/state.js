@@ -2,7 +2,7 @@ import { mix } from './utils.js'
 
 const state = {
   topic: 'mult',
-  questions: mix(),
+  questions: mix('mult'),
   showAnswer: false,
 }
 

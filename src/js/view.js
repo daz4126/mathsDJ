@@ -1,5 +1,6 @@
 import { h } from 'hyperapp'
-import { Multiplication, Division, Equation, Question, Topics } from './questions.js'
+import { Question } from './components.js'
+import topics from './topics.js'
 
 
 const view = (state, actions) => (
@@ -9,9 +10,10 @@ const view = (state, actions) => (
   <button class="topic pure-button pure-button-primary" onclick={()=>actions.changeTopic('mult')}>Multiplication</button>
   <button class="topic pure-button pure-button-primary" onclick={()=>actions.changeTopic('div')}>Division</button>
   <button class="topic pure-button pure-button-primary" onclick={()=>actions.changeTopic('eqn')}>Equations</button>
+  <button class="topic pure-button pure-button-primary" onclick={()=>actions.changeTopic('percent')}>Percentages</button>
   </header>
   <div class='main'>
-    <button class="pure-button pure-button-primary" onclick={actions.mix}><i class="fa fa-sync-alt"></i>MIX</button>
+    <button class="pure-button pure-button-primary" onclick={ () => actions.mix(state.topic) }><i class="fa fa-sync-alt"></i>MIX</button>
     <button class="pure-button pure-button-primary" onclick={actions.toggleShowAnswer}>{state.showAnswer ? <i class="fa fa-eye-slash"></i>:<i class="fa fa-eye"></i>}{state.showAnswer ? 'Hide Answers':'Show Answers'}</button>
 
     <ol  id='questions'>
