@@ -1,8 +1,8 @@
 import { uuid, mix } from './utils.js'
 
 const actions = {
-  mix: (topic) => state => ({
-    questions: mix(topic)
+  mix: () => state => ({
+    questions: mix(state.topic,state.numberOfQuestions)
   }),
   toggleShowAnswer: () => state => ({
     showAnswer: !state.showAnswer
@@ -12,7 +12,7 @@ const actions = {
   //MathJax.Hub.Queue(["Typeset",MathJax.Hub])
 },
   changeTopic: (topic) => state => ({
-    questions: mix(topic),
+    questions: mix(topic,state.numberOfQuestions),
     topic: topic
   })
 };

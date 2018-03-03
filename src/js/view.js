@@ -16,7 +16,7 @@ const view = (state, actions) => (
   </div>
   </header>
   <div class='main'>
-    <button class="pure-button" onclick={ () => actions.mix(state.topic) }><i class="fa fa-sync-alt"></i>MIX</button>
+    <button class="pure-button" onclick={ actions.mix }><i class="fa fa-sync-alt"></i>MIX</button>
     <button class="pure-button" onclick={actions.toggleShowAnswer}>{state.showAnswer ? <i class="fa fa-eye-slash"></i>:<i class="fa fa-eye"></i>}{state.showAnswer ? 'Hide Answers':'Show Answers'}</button>
 
     <ol  id='questions'>

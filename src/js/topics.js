@@ -1,5 +1,5 @@
 
-import { Multiplication, Division, Equation, Percent, MultDec } from './components.js'
+import { Multiplication, Division, Equation, Percent, Brackets } from './components.js'
 
 const topics = {
     mult: {
@@ -15,7 +15,7 @@ const topics = {
     eqn: {
       name: 'Equations',
       component: Equation,
-      numbers: [12,12,12]
+      numbers: [12,12,12,2]
     },
     percent: {
       name: 'Percentages',
@@ -24,8 +24,13 @@ const topics = {
     },
     multdec: {
       name: 'Multiplying Decimals',
-      component: MultDec,
-      numbers: [12,6,12,6]
+      component: Multiplication,
+      numbers: [12,12,6,6]
+    },
+    brackets: {
+      name: 'Expanding Brackets',
+      component: Brackets,
+      numbers: [11,12,12,2]
     }
 };
 
