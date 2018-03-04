@@ -1,0 +1,23 @@
+// fonts
+@import url('https://fonts.googleapis.com/css?family=Monoton');
+$main-font: "Nimbus Sans L", Helvetica Neue, Helvetica, "Liberation Sans",FreeSans, Arial, Sans-serif;
+$headingFont: 'Monoton', cursive;
+$base-font-size: 16px!default;
+$base-line-height: 24px!default;
+$line-height-ratio: $base-line-height / $base-font-size;
+
+// colors
+$blue: #20375F;
+$red: #B85258;
+$yellow: yellow;
+$grey: #696969;
+$white: #FFFFFF;
+
+$primary-color: $red;
+$secondary-color: $yellow;
+$text-color: black;
+
+// responsive breakpoints
+$small-screen-size: 480px!default;
+$medium-screen-size: 768px!default;
+$large-screen-size: 1200px!default;

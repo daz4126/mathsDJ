@@ -1,12 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Monoton');
-@import 'pure-min';
+@import 'normalize';
+@import 'settings';
+@import 'buttons';
+@import 'responsive';
 
-$blue: #20375F;
-$red: #B85258;
-$yellow: yellow;
-$grey: #696969;
-$white: #FFFFFF;
-$headingFont: 'Monoton', cursive;
+
+html{
+    font:#{($base-font-size/16px)*1em}/#{$line-height-ratio} $main-font;
+    overflow-y:scroll;
+    min-height:100%;
+}
 
 body {
   background-color: $blue;
@@ -22,15 +24,18 @@ header {
    line-height: 1.2;
    letter-spacing: -1px;
    margin: 0;
+   @include respond-to(small){
+     font-size: 36px;
+   };
    strong{
     color: $yellow;
     font-size: 96px;
    }
   }
     button.topic {
-     margin: 0 0.2em;
-     background-color: $yellow;
-     color: $blue;
+     @include button(none,$yellow);
+     border: 1px solid $red;
+     margin: 1em 0.2em;
        &:hover {
         background-color: $red;
         color: $white;
@@ -42,9 +47,8 @@ header {
   background-color: #fff;
   padding: 1em 4em;
   button {
+   @include button($blue,$yellow);
    margin: 0 0.2em;
-   background-color: $blue;
-   color: $yellow;
    &:hover {
     background-color: $red;
     color: $white;

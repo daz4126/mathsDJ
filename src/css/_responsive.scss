@@ -1,0 +1,23 @@
+// Responsive
+
+@mixin respond-to($min,$max:null){
+
+    @if $min == small and $max==medium{$min: null; $max: $medium-screen-size;}
+    @if $min == medium and $max==large{$min: $small-screen-size+1;$max:null}
+    @if $min == small{$min: null; $max: $small-screen-size;}
+    @if $min == medium{$min: $small-screen-size+1; $max: $medium-screen-size;}
+    @if $min == large{$min: $medium-screen-size+1;}
+
+    @if $min==null{
+      @media only screen and (max-width:$max) { @content; }
+    }
+
+    @elseif $max==null{
+      @media only screen and (min-width:$min) { @content; }
+    }
+
+    @else{
+      @media only screen and (min-width:$min) and (max-width:$max) { @content; }
+    }
+
+}

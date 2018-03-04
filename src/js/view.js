@@ -10,14 +10,14 @@ const view = (state, actions) => (
   <div  id='topics'>
    {
      Object.entries(topics).map( ([key,topic]) =>
-     <button class="topic pure-button" onclick={()=>actions.changeTopic(key)}>{topic.name}</button>
+     <button class="topic" onclick={()=>actions.changeTopic(key)}>{topic.name}</button>
    )
    }
   </div>
   </header>
   <div class='main'>
-    <button class="pure-button" onclick={ actions.mix }><i class="fa fa-sync-alt"></i>MIX</button>
-    <button class="pure-button" onclick={actions.toggleShowAnswer}>{state.showAnswer ? <i class="fa fa-eye-slash"></i>:<i class="fa fa-eye"></i>}{state.showAnswer ? 'Hide Answers':'Show Answers'}</button>
+    <button onclick={ actions.mix }><i class="fa fa-sync-alt"></i>MIX</button>
+    <button onclick={actions.toggleShowAnswer}>{state.showAnswer ? <i class="fa fa-eye-slash"></i>:<i class="fa fa-eye"></i>}{state.showAnswer ? 'Hide Answers':'Show Answers'}</button>
 
     <ol  id='questions'>
      {state.questions.map((numbers,i) => (

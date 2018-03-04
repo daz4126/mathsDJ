@@ -1,0 +1,32 @@
+// Buttons
+
+@mixin button($bg: $primary-color, $color: $text-color, $border: darker-shade-of($color, 2),$radius: 0){
+
+display: inline-block;
+zoom: 1;
+vertical-align:middle;
+white-space:nowrap;
+cursor: pointer;
+text-align: center;
+text-decoration: none;
+
+line-height: normal;
+-webkit-user-drag: none;
+user-select: none;
+box-sizing: border-box;
+
+margin:0;
+padding: 0.4em 1em;
+
+
+outline: none;
+border: none;
+border-radius: $radius;
+background: $bg;
+color: $color;
+// Firefox: Get rid of the inner focus border
+  &::-moz-focus-inner {
+      padding: 0;
+      border: 0;
+  }
+}
