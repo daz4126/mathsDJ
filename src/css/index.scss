@@ -32,11 +32,17 @@ header {
    strong{
     color: $yellow;
     font-size: 96px;
+    @include respond-to(small){
+      font-size: 48px;
+    };
    }
   }
     button.topic {
      @include button(none,$yellow);
      border: 1px solid $red;
+     @include respond-to(small){
+       width: 100%;
+     };
      margin: 0 0.2em 0.4em;
        &:hover {
         background-color: $red;
@@ -49,9 +55,15 @@ header {
 .main {
   background-color: #fff;
   padding: 1em 4em 4em;
+  @include respond-to(small){
+    padding: 1em;
+  };
   button {
    @include button($blue,$yellow);
    margin: 0 0.2em;
+   @include respond-to(small){
+     width: 100%;
+   };
    &:hover {
     background-color: $red;
     color: $white;
@@ -80,4 +92,7 @@ footer {
   background: linear-gradient(30deg, $blue,$red, $yellow);
   color: $white;
   padding: 1em 4em 10em;
+  @include respond-to(small){
+    padding: 1em 1em 10em;
+  };
 }
