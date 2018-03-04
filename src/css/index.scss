@@ -16,7 +16,7 @@ body {
 
 header {
   background-color: $blue;
-  padding: 0em 4em 1em;
+  padding: 0em 4em;
   h1 {
    color: $red;
    font-family: $headingFont;
@@ -35,7 +35,7 @@ header {
     button.topic {
      @include button(none,$yellow);
      border: 1px solid $red;
-     margin: 1em 0.2em;
+     margin: 0 0.2em 0.4em;
        &:hover {
         background-color: $red;
         color: $white;
