@@ -23,7 +23,7 @@ header {
   background: linear-gradient(lighten($blue,15),$blue, darken($blue, 5));
   padding: 0em 4em 0.4em;
   @include respond-to(small){
-    padding: 0em 0.4em 0.4em;
+    padding: 0em 1em 0.4em;
   };
   h1 {
    color: $red;
