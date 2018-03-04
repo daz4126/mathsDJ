@@ -17,8 +17,11 @@ body {
 
 header {
   background: $blue;
-  background: linear-gradient(30deg, darken($blue,5),$blue, lighten($blue, 15));
+  background: linear-gradient(lighten($blue,15),$blue, darken($blue, 5));
   padding: 0em 4em 0.4em;
+  @include respond-to(small){
+    padding: 0em 0.4em 0.4em;
+  };
   h1 {
    color: $red;
    font-family: $headingFont;
@@ -40,10 +43,11 @@ header {
     button.topic {
      @include button(none,$yellow);
      border: 1px solid $red;
+     margin: 0 0.2em 0.4em;
      @include respond-to(small){
        width: 100%;
+       margin: 0.2em 0 0;
      };
-     margin: 0 0.2em 0.4em;
        &:hover {
         background-color: $red;
         //background: linear-gradient($red, darken($red, 10));
@@ -56,12 +60,13 @@ header {
   background-color: #fff;
   padding: 1em 4em 4em;
   @include respond-to(small){
-    padding: 1em;
+    padding: 0.4em;
   };
   button {
    @include button($blue,$yellow);
    margin: 0 0.2em;
    @include respond-to(small){
+     margin: 0.2em 0 0;
      width: 100%;
    };
    &:hover {
