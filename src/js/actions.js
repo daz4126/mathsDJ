@@ -7,6 +7,9 @@ const actions = {
   toggleShowAnswer: () => state => ({
     showAnswer: !state.showAnswer
   }),
+  toggleFullScreen: () => state => ({
+    fullScreen: !state.fullScreen
+  }),
   mathJaxify: () => (state, actions) => {
   console.log('mathjaxifying')
   //MathJax.Hub.Queue(["Typeset",MathJax.Hub])

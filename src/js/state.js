@@ -1,8 +1,9 @@
 import { mix } from './utils.js'
 
 const state = {
-  topic: 'mult',
-  numberOfQuestions: 5,
+  fullScreen: false,
+  topic: null,
+  numberOfQuestions: 8,
   questions: mix('mult',5),
   showAnswer: false,
 }

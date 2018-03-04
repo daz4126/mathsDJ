@@ -11,12 +11,14 @@ html{
 }
 
 body {
-  background-color: $blue;
+  background-color: $white;
+  color: $grey;
   }
 
 header {
-  background-color: $blue;
-  padding: 0em 4em;
+  background: $blue;
+  //background: linear-gradient($blue, darken($blue, 10));
+  padding: 0em 4em 0.4em;
   h1 {
    color: $red;
    font-family: $headingFont;
@@ -38,6 +40,7 @@ header {
      margin: 0 0.2em 0.4em;
        &:hover {
         background-color: $red;
+        //background: linear-gradient($red, darken($red, 10));
         color: $white;
         }
     }
@@ -45,7 +48,7 @@ header {
 
 .main {
   background-color: #fff;
-  padding: 1em 4em;
+  padding: 1em 4em 4em;
   button {
    @include button($blue,$yellow);
    margin: 0 0.2em;
@@ -75,7 +78,7 @@ header {
 footer {
   background-color: $blue;
   color: $white;
-  padding: 1em 4em;
+  padding: 1em 4em 10em;
   .fa-heart {
     color: $red;
   }

@@ -1,6 +1,6 @@
 // Buttons
 
-@mixin button($bg: $primary-color, $color: $text-color, $border: darker-shade-of($color, 2),$radius: 0){
+@mixin button($bg: $primary-color, $color: $text-color, $border: darken($color, 2),$radius: 0){
 
 display: inline-block;
 zoom: 1;
