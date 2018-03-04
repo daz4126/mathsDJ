@@ -13,6 +13,9 @@ html{
 body {
   background-color: $white;
   color: $grey;
+  @include respond-to(small){
+    text-align: center;
+  };
   }
 
 header {
@@ -45,7 +48,7 @@ header {
      border: 1px solid $red;
      margin: 0 0.2em 0.4em;
      @include respond-to(small){
-       width: 100%;
+       width: 80%;
        margin: 0.2em 0 0;
      };
        &:hover {
@@ -67,7 +70,7 @@ header {
    margin: 0 0.2em;
    @include respond-to(small){
      margin: 0.2em 0 0;
-     width: 100%;
+     width: 80%;
    };
    &:hover {
     background-color: $red;
@@ -81,7 +84,7 @@ header {
     color: $grey;
     font-family: 'serif';
     font-size: 32px;
-    width: 600px;
+    text-align: left;
     li{
       margin: 0.4em 0;
       .answer{
@@ -97,6 +100,7 @@ footer {
   background: linear-gradient(30deg, $blue,$red, $yellow);
   color: $white;
   padding: 1em 4em 10em;
+  text-align: left;
   @include respond-to(small){
     padding: 1em 1em 10em;
   };
