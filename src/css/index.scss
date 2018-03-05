@@ -3,7 +3,6 @@
 @import 'buttons';
 @import 'responsive';
 
-
 html{
     font:#{($base-font-size/16px)*1em}/#{$line-height-ratio} $main-font;
     overflow-y:scroll;
@@ -23,7 +22,7 @@ header {
   background: linear-gradient(lighten($blue,15),$blue, darken($blue, 5));
   padding: 0em 4em 0.4em;
   @include respond-to(small){
-    padding: 0em 1em 0.4em;
+    padding: 0em 2em 0.4em;
   };
   h1 {
    color: $red;
@@ -51,6 +50,9 @@ header {
        width: 80%;
        margin: 0.2em 0 0;
      };
+     @include respond-to(medium){
+       width: 33.33%;
+     };
        &:hover {
         background-color: $red;
         //background: linear-gradient($red, darken($red, 10));
@@ -63,14 +65,17 @@ header {
   background-color: #fff;
   padding: 1em 4em 4em;
   @include respond-to(small){
-    padding: 0.4em;
+    padding: 0.8em;
   };
   button {
    @include button($blue,$yellow);
    margin: 0 0.2em;
    @include respond-to(small){
      margin: 0.2em 0 0;
-     width: 80%;
+     width: 100%;
+   };
+   @include respond-to(medium){
+     width: 33.33%;
    };
    &:hover {
     background-color: $red;
@@ -79,6 +84,9 @@ header {
    i {
      margin-right: 0.2em;
    }
+  }
+  h2{
+    color: $blue;
   }
   ol {
     color: $grey;

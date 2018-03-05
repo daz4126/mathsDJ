@@ -31,7 +31,7 @@ const view = (state, actions) => (
     </div>
     : <div>
       <h2>Welcome to Maths DJ!</h2>
-      <p>Maths DJ is the easiest way to generate lots of questions to answer.</p>
+      <p>Maths DJ makes it easy to generate questions and answers from a variety of mathematical topics.</p>
       <h2>Choose a topic from the list above to get started!</h2>
       <p>Click on the MIX button to generate new questions and click on Show Answers to see if you got them right.</p>
       </div>
