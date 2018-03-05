@@ -2,6 +2,7 @@
 @import 'settings';
 @import 'buttons';
 @import 'responsive';
+@import 'print';
 
 html{
     font:#{($base-font-size/16px)*1em}/#{$line-height-ratio} $main-font;
@@ -75,7 +76,7 @@ header {
    border: 1px solid $red;
    margin: 0 0.2em;
    @include respond-to(small){
-     margin: 0 0.4em;
+     margin: 0.2em 0;
      width: 100%;
    };
    @include respond-to(medium){
@@ -90,7 +91,7 @@ header {
      margin-right: 0.2em;
    }
   }
-  h2{
+  h1,h2{
     color: $blue;
   }
   ol {

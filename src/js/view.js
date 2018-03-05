@@ -18,11 +18,15 @@ const view = (state, actions) => (
   </header>
   : '' }
   <div class='main'>
-    <button onclick={ actions.mix }><i class="fa fa-sync-alt"></i>MIX</button>
-    <button onclick={actions.toggleShowAnswer}>{state.showAnswer ? <i class="fa fa-eye-slash"></i>:<i class="fa fa-eye"></i>}{state.showAnswer ? 'Hide Answers':'Show Answers'}</button>
-    <button onclick={actions.toggleFullScreen}>{state.fullScreen ? 'Close Full Screen':'Full Screen'}</button>
     { state.topic ?
     <div>
+    <div class='actions'>
+      <button onclick={ actions.mix }><i class="fas fa-sync-alt"></i>MIX</button>
+      <button onclick={actions.toggleShowAnswer}>{state.showAnswer ? <i class="fas fa-eye-slash"></i>:<i class="fas fa-eye"></i>}{state.showAnswer ? 'Hide Answers':'Show Answers'}</button>
+      <button onclick={actions.toggleFullScreen}>{state.fullScreen ? 'Close Full Screen':'Full Screen'}</button>
+      <button onclick={() => window.print()}><i class="fas fa-print"></i>Print</button>
+    </div>
+    <h1>{ topics[state.topic].name }</h1>
     <ol  id='questions'>
      {state.questions.map((numbers,i) => (
        <Question topic={state.topic} numbers={numbers} showAnswer={state.showAnswer} key={i} />
