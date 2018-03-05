@@ -7,11 +7,11 @@ html{
     font:#{($base-font-size/16px)*1em}/#{$line-height-ratio} $main-font;
     overflow-y:scroll;
     min-height:100%;
-    background-color: $blue;
+    background-color: $white;
 }
 
 body {
-  background-color: $blue;
+  background-color: $white;
   color: $grey;
   @include respond-to(small){
     text-align: center;
