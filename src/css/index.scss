@@ -51,7 +51,8 @@ header {
        margin: 0.2em 0 0;
      };
      @include respond-to(medium){
-       width: 33.33%;
+       width: 48%;
+       margin: 0 2% 0.4em 0;
      };
        &:hover {
         background-color: $red;
@@ -75,7 +76,8 @@ header {
      width: 100%;
    };
    @include respond-to(medium){
-     width: 33.33%;
+     width: 31%;
+     margin: 0 2% 0 0;
    };
    &:hover {
     background-color: $red;
