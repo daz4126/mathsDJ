@@ -34,15 +34,22 @@ const view = (state, actions) => (
     </ol>
     </div>
     : <div>
-      <h2>Welcome to Maths DJ!</h2>
+      <h1>Welcome to Maths DJ!</h1>
       <p>Maths DJ makes it easy to generate questions and answers from a variety of mathematical topics.</p>
-      <h2>Choose a topic from the list above to get started!</h2>
-      <p>Click on the MIX button to generate a new set of questions and click on Show Answers to see if you got them right.</p>
+      <strong>Choose a topic from the list above to get started!</strong>
       </div>
      }
   </div>
   { !state.fullScreen ?
   <footer>
+  <h2>Instructions:</h2>
+  <ul>
+  <li>Select a topic from the list at the top of the page.</li>
+  <li>Press the MIX button to generage a new set of questions.</li>
+  <li>Click on Show Answers to see the answer to each question.</li>
+  <li>Press Full Screen to hide the header, footer and all clutter</li>
+  <li>Click on Print to print out the questions as a worksheet.</li>
+  </ul>
   <p>
   Made in Manchester with <a href='http://hyperapp.js.org'>Hyperapp</a>
   </p>

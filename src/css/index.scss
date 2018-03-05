@@ -22,7 +22,7 @@ body {
 header {
   //border-bottom: 4px solid $red;
   background: $blue;
-  background: linear-gradient(lighten($blue,15),$blue, darken($blue, 5));
+  background: linear-gradient(darken($blue, 5),lighten($blue,25));
   padding: 0em 4em 0.4em;
   @include respond-to(small){
     padding: 0em 2em 0.4em;
@@ -46,8 +46,9 @@ header {
    }
   }
     button.topic {
-     @include button(none,$yellow);
-     border: 1px solid $red;
+     @include button(none,$white);
+     border: 1px solid $white;
+     //text-transform: uppercase;
      margin: 0 0.2em 0.4em;
      @include respond-to(small){
        width: 80%;
@@ -58,9 +59,9 @@ header {
        margin: 0 2% 0.4em 0;
      };
        &:hover {
-        background-color: $red;
+        background-color: $yellow;
         //background: linear-gradient($red, darken($red, 10));
-        color: $white;
+        color: $blue;
         }
     }
 }
@@ -72,7 +73,7 @@ header {
     padding: 0.8em;
   };
   button {
-   @include button(none,$blue);
+   @include button($white,$red);
    border: 1px solid $red;
    margin: 0 0.2em;
    @include respond-to(small){
@@ -84,21 +85,31 @@ header {
      margin: 0 2% 0.4em 0;
    };
    &:hover {
-    background-color: $yellow;
-    color: $blue;
+    background-color: $red;
+    color: $white;
    }
    i {
      margin-right: 0.2em;
    }
   }
-  h1,h2{
+  h1{
     color: $blue;
+    //text-transform: uppercase;
+    margin-bottom: -0.2em;
+    @include respond-to(small){
+      text-align: left;
+    };
+  }
+  strong{
+    color: $blue;
+    font-size: 1.4em;
   }
   ol {
     color: $grey;
     font-family: 'serif';
     font-size: 32px;
     text-align: left;
+    margin: 0;
     li{
       margin: 0.4em 0;
       .answer{
@@ -117,7 +128,7 @@ footer {
   background-color: $blue;
   background: linear-gradient(20deg, $blue, $red,$yellow);
   color: $white;
-  padding: 1em 4em 10em;
+  padding: 1em 4em 6em;
   text-align: left;
   @include respond-to(small){
     padding: 1em 1em 10em;
@@ -127,7 +138,7 @@ footer {
       color: $white;
     }
     &:hover {
-      color: $yellow;
+      color: $blue;
     }
   }
   i {
