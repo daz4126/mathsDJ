@@ -40,10 +40,13 @@ const view = (state, actions) => (
   { !state.fullScreen ?
   <footer>
   <p>
-  Made in Manchester with <i class="fa fa-heart"></i> & Hyperapp
+  Made in Manchester with <a href='http://hyperapp.js.org'>Hyperapp</a>
   </p>
   <p>
-  <i class="fa fa-copyright"></i> Maths DJ 2018
+  <i class="fab fa-twitter"></i><a href='http://twitter.com/mathsdj'>@mathsDJ</a> on Twitter
+  </p>
+  <p>
+  &copy; MathsDJ 2018
   </p>
   </footer>
   : '' }

@@ -7,10 +7,11 @@ html{
     font:#{($base-font-size/16px)*1em}/#{$line-height-ratio} $main-font;
     overflow-y:scroll;
     min-height:100%;
+    background-color: $red;
 }
 
 body {
-  background-color: $white;
+  background-color: $red;
   color: $grey;
   @include respond-to(small){
     text-align: center;
@@ -18,6 +19,7 @@ body {
   }
 
 header {
+  //border-bottom: 4px solid $red;
   background: $blue;
   background: linear-gradient(lighten($blue,15),$blue, darken($blue, 5));
   padding: 0em 4em 0.4em;
@@ -48,7 +50,7 @@ header {
      margin: 0 0.2em 0.4em;
      @include respond-to(small){
        width: 80%;
-       margin: 0.2em 0 0;
+       margin: 0 0 0.4em;
      };
      @include respond-to(medium){
        width: 48%;
@@ -72,12 +74,12 @@ header {
    @include button($blue,$yellow);
    margin: 0 0.2em;
    @include respond-to(small){
-     margin: 0.2em 0 0;
+     margin: 0;
      width: 100%;
    };
    @include respond-to(medium){
-     width: 31%;
-     margin: 0 2% 0 0;
+     width: 48%;
+     margin: 0 2%;
    };
    &:hover {
     background-color: $red;
@@ -99,6 +101,9 @@ header {
       margin: 0.4em 0;
       .answer{
         color: $red;
+        @include respond-to(small){
+          display: block;
+        };
       }
     }
   }
@@ -106,12 +111,24 @@ header {
 }
 
 footer {
-  background-color: $blue;
-  background: linear-gradient(30deg, $blue,$red, $yellow);
+  //border-top: 4px $blue solid;
+  background-color: $red;
+  background: linear-gradient(20deg, $yellow, $red,$blue);
   color: $white;
   padding: 1em 4em 10em;
   text-align: left;
   @include respond-to(small){
     padding: 1em 1em 10em;
   };
+  a {
+    &:link, &:visited{
+      color: $white;
+    }
+    &:hover {
+      color: $yellow;
+    }
+  }
+  i {
+    margin-right: 0.4em;
+  }
 }
