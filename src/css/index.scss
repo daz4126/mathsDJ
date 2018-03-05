@@ -7,11 +7,11 @@ html{
     font:#{($base-font-size/16px)*1em}/#{$line-height-ratio} $main-font;
     overflow-y:scroll;
     min-height:100%;
-    background-color: $red;
+    background-color: $blue;
 }
 
 body {
-  background-color: $red;
+  background-color: $blue;
   color: $grey;
   @include respond-to(small){
     text-align: center;
@@ -71,7 +71,8 @@ header {
     padding: 0.8em;
   };
   button {
-   @include button($blue,$yellow);
+   @include button(none,$blue);
+   border: 1px solid $red;
    margin: 0 0.2em;
    @include respond-to(small){
      margin: 0;
@@ -82,8 +83,8 @@ header {
      margin: 0 2%;
    };
    &:hover {
-    background-color: $red;
-    color: $white;
+    background-color: $yellow;
+    color: $blue;
    }
    i {
      margin-right: 0.2em;
@@ -112,8 +113,8 @@ header {
 
 footer {
   //border-top: 4px $blue solid;
-  background-color: $red;
-  background: linear-gradient(20deg, $yellow, $red,$blue);
+  background-color: $blue;
+  background: linear-gradient(20deg, $blue, $red,$yellow);
   color: $white;
   padding: 1em 4em 10em;
   text-align: left;
