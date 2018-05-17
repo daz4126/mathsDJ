@@ -25,11 +25,18 @@ const view = (state, actions) => (
       <button onclick={actions.toggleShowAnswer}>{state.showAnswer ? <i class="fas fa-eye-slash"></i>:<i class="fas fa-eye"></i>}{state.showAnswer ? 'Hide Answers':'Show Answers'}</button>
       <button onclick={actions.toggleFullScreen}>{state.fullScreen ? 'Close Full Screen':'Full Screen'}</button>
       <button onclick={() => window.print()}><i class="fas fa-print"></i>Print</button>
+      <button disabled={state.fontSize <= 8} onclick={() => actions.fontSizeDown(2)}>-</button>
+      Font Size
+      <button onclick={() => actions.fontSizeUp(2)}>+</button>
+      <button disabled={state.numberOfQuestions <= 1} onclick={() => actions.removeQuestion() }>-</button>
+      Number of Questions
+      <button onclick={() => actions.addQuestion() }>+</button>
     </div>
-    <h1>{ topics[state.topic].name }</h1>
-    <ol  id='questions'>
+    <h1 style={{fontSize: 1.5*state.fontSize+'px'}} >{ topics[state.topic].name }</h1>
+    <ol style={{fontSize: state.fontSize+'px'}} id='questions'>
      {state.questions.map((numbers,i) => (
-       <Question topic={state.topic} numbers={numbers} showAnswer={state.showAnswer} key={i} />
+       <Question
+       topic={state.topic} numbers={numbers} showAnswer={state.showAnswer} key={i} />
      ))}
     </ol>
     </div>
@@ -45,7 +52,7 @@ const view = (state, actions) => (
   <h2>Instructions:</h2>
   <ul>
   <li>Select a topic from the list at the top of the page.</li>
-  <li>Press the MIX button to generage a new set of questions.</li>
+  <li>Press the MIX button to generate a new set of questions.</li>
   <li>Click on Show Answers to see the answer to each question.</li>
   <li>Press Full Screen to hide the header, footer and all clutter</li>
   <li>Click on Print to print out the questions as a worksheet.</li>

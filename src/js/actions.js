@@ -1,4 +1,5 @@
-import { uuid, mix } from './utils.js'
+import { mix } from './utils.js'
+import topics from './topics.js'
 
 const actions = {
   mix: () => state => ({
@@ -10,13 +11,19 @@ const actions = {
   toggleFullScreen: () => state => ({
     fullScreen: !state.fullScreen
   }),
-  mathJaxify: () => (state, actions) => {
-  console.log('mathjaxifying')
-  //MathJax.Hub.Queue(["Typeset",MathJax.Hub])
-},
   changeTopic: (topic) => state => ({
     questions: mix(topic,state.numberOfQuestions),
     topic: topic
+  }),
+  fontSizeDown: n => state => ({ fontSize: state.fontSize - n }),
+  fontSizeUp: n => state => ({ fontSize: state.fontSize + n }),
+  removeQuestion: () => state => ({
+    numberOfQuestions: state.numberOfQuestions - 1,
+    questions: mix(state.topic,state.numberOfQuestions - 1)
+  }),
+  addQuestion: () => state => ({
+    numberOfQuestions: state.numberOfQuestions + 1,
+    questions: mix(state.topic,state.numberOfQuestions + 1)
   })
 };
 
