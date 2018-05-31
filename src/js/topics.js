@@ -4,33 +4,39 @@ import { Multiplication, Division, Equation, Percent, Brackets } from './compone
 const topics = {
     mult: {
       name: 'Multiplication',
+      intro: 'Evaluate',
       component: Multiplication,
-      numbers: [12,12]
+      numbers: [[-12,12],[-12,12]]
     },
     div: {
       name: 'Division',
+      intro: 'Evaluate',
       component: Division,
-      numbers: [12,12]
+      numbers: [[1,12],[1,12]]
     },
     eqn: {
       name: 'Equations',
+      intro: 'Solve the following equations:',
       component: Equation,
-      numbers: [12,12,12,2]
+      numbers: [[1,12],[1,12],[1,12],[-1,1]]
     },
     percent: {
       name: 'Percentages',
+      intro: 'Find the answer to the following questions:',
       component: Percent,
-      numbers: [20,12]
+      numbers: [[1,20],[1,12]]
     },
     multdec: {
       name: 'Multiplying Decimals',
+      intro: 'Evaluate',
       component: Multiplication,
-      numbers: [12,12,6,6]
+      numbers: [[1,12],[1,12],[-3,3],[-3,3]]
     },
     brackets: {
       name: 'Expanding Brackets',
+      intro: 'Expand the following brackets:',
       component: Brackets,
-      numbers: [11,12,12,2]
+      numbers: [[2,12],[1,12],[-12,12]]
     }
 };
 

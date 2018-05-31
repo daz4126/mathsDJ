@@ -8,9 +8,10 @@ import { coeff,plusorminus } from './utils.js'
  };
 
 export const Multiplication = ({numbers, showAnswer = true, key}) => {
-  const x = numbers[2] || 3;
-  const y = numbers[3] || 3;
-  return (<li key={key}>{numbers[0]/10**(x-3)} &times; {numbers[1]/10**(y-3)} {showAnswer ? (<span class='answer'>= {numbers[0]*numbers[1]/10**(x+y-6)}</span>) : null}</li>)
+  const x = numbers[2] || 0;
+  const y = numbers[3] || 0;
+  return (<li key={key}>
+    {numbers[0]/10**x} &times; {numbers[1]/10**y} {showAnswer ? (<span class='answer'>= {numbers[0]*numbers[1]/10**(x+y)}</span>) : null}</li>)
  };
 
 export const Division = ({numbers, showAnswer = true, key}) =>  (
@@ -26,5 +27,5 @@ export const Percent = ({numbers, showAnswer = true, key}) =>  (
    );
 
 export const Brackets = ({numbers, showAnswer = true, key}) =>  (
-  <li key={key}>{numbers[0]+1}({coeff(numbers[1])}<i>x</i> {plusorminus(numbers[3])} {numbers[2]}) {showAnswer ? (<span class='answer'> = {coeff((numbers[0]+1)*numbers[1])}<i>x</i> {plusorminus(numbers[3])} {(numbers[0]+1)*numbers[2]}</span>) : null}</li>
+  <li key={key}>{numbers[0]}({coeff(numbers[1])}<i>x</i> {plusorminus(numbers[2])} {Math.abs(numbers[2])}) {showAnswer ? (<span class='answer'> = {coeff((numbers[0])*numbers[1])}<i>x</i> {plusorminus(numbers[2])} {Math.abs(numbers[0]*numbers[2])}</span>) : null}</li>
 );

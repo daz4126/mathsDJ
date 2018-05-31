@@ -22,7 +22,7 @@ body {
 header {
   //border-bottom: 4px solid $red;
   background: $blue;
-  background: linear-gradient(darken($blue, 5),lighten($blue,25));
+  //background: linear-gradient(darken($blue, 5),lighten($blue,25));
   padding: 0em 4em 0.4em;
   @include respond-to(small){
     padding: 0em 2em 0.4em;
@@ -64,6 +64,10 @@ header {
         color: $blue;
         }
     }
+    .controls {
+      margin-top: 0.2em;
+      color: $red;
+    }
 }
 
 .main {
@@ -94,6 +98,16 @@ header {
   }
   h1{
     color: $blue;
+    margin-bottom: -0.6em;
+    @include respond-to(small){
+      text-align: left;
+    };
+  }
+  h3{
+    color: $grey;
+    font-style: italic;
+    font-weight: normal;
+    font-family: 'serif';
     margin-bottom: -0.2em;
     @include respond-to(small){
       text-align: left;
@@ -127,7 +141,7 @@ header {
 footer {
   //border-top: 4px $blue solid;
   background-color: $red;
-  background: linear-gradient(20deg, $blue, $red,$yellow);
+  //background: linear-gradient(20deg, $blue, $red,$yellow);
   color: $white;
   padding: 1em 4em 6em;
   text-align: left;

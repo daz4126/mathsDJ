@@ -25,6 +25,8 @@ const view = (state, actions) => (
       <button onclick={actions.toggleShowAnswer}>{state.showAnswer ? <i class="fas fa-eye-slash"></i>:<i class="fas fa-eye"></i>}{state.showAnswer ? 'Hide Answers':'Show Answers'}</button>
       <button onclick={actions.toggleFullScreen}>{state.fullScreen ? 'Close Full Screen':'Full Screen'}</button>
       <button onclick={() => window.print()}><i class="fas fa-print"></i>Print</button>
+    </div>
+    <div class='controls'>    
       <button disabled={state.fontSize <= 8} onclick={() => actions.fontSizeDown(2)}>-</button>
       Font Size
       <button onclick={() => actions.fontSizeUp(2)}>+</button>
@@ -33,6 +35,7 @@ const view = (state, actions) => (
       <button onclick={() => actions.addQuestion() }>+</button>
     </div>
     <h1 style={{fontSize: 1.5*state.fontSize+'px'}} >{ topics[state.topic].name }</h1>
+    <h3 style={{fontSize: 0.75*state.fontSize+'px'}}>{ topics[state.topic].intro }</h3>
     <ol style={{fontSize: state.fontSize+'px'}} id='questions'>
      {state.questions.map((numbers,i) => (
        <Question
