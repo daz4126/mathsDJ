@@ -22,7 +22,7 @@ body {
 header {
   //border-bottom: 4px solid $red;
   background: $blue;
-  //background: linear-gradient(darken($blue, 5),lighten($blue,25));
+  background: linear-gradient(darken($blue, 5),lighten($blue,25));
   padding: 0em 4em 0.4em;
   @include respond-to(small){
     padding: 0em 2em 0.4em;
