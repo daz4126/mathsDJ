@@ -96,37 +96,25 @@ header {
      margin-right: 0.2em;
    }
   }
-  h1{
-    color: $blue;
-    margin-bottom: -0.6em;
-    @include respond-to(small){
-      text-align: left;
-    };
-  }
-  h3{
-    color: $grey;
-    font-style: italic;
-    font-weight: normal;
-    font-family: 'serif';
-    margin-bottom: -0.2em;
-    @include respond-to(small){
-      text-align: left;
-    };
-  }
+
   strong{
     color: $blue;
     font-size: 1.4em;
   }
-  ol {
-    border: #eee 1px solid;
+  li.topic {
+    list-style: none;
     padding: 0;
     list-style-position: inside;
     color: $grey;
     font-family: 'serif';
     text-align: left;
     margin: 0;
+    width: 33%;
+    float: left;
+    ol{
+      padding: 0;
+    }
     li{
-      margin: 0.4em 0;
       .answer{
         color: $red;
         @include respond-to(small){
@@ -134,11 +122,30 @@ header {
         };
       }
     }
+    h1{
+      color: $blue;
+      font-family: $main-font;
+      margin-bottom: -0.6em;
+      @include respond-to(small){
+        text-align: left;
+      };
+    }
+    h3{
+      color: $grey;
+      font-style: italic;
+      font-weight: normal;
+      font-family: 'serif';
+      margin-bottom: -0.2em;
+      @include respond-to(small){
+        text-align: left;
+      };
+    }
   }
 
 }
 
 footer {
+  clear: left;
   //border-top: 4px $blue solid;
   background-color: $red;
   //background: linear-gradient(20deg, $blue, $red,$yellow);

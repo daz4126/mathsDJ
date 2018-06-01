@@ -69,7 +69,7 @@ require = (function (modules, cache, entry) {
 
   // Override the current require with this new one
   return newRequire;
-})({13:[function(require,module,exports) {
+})({11:[function(require,module,exports) {
 var bundleURL = null;
 function getBundleURLCached() {
   if (!bundleURL) {
@@ -100,7 +100,7 @@ function getBaseURL(url) {
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 
-},{}],12:[function(require,module,exports) {
+},{}],7:[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -132,13 +132,13 @@ function reloadCSS() {
 
 module.exports = reloadCSS;
 
-},{"./bundle-url":13}],3:[function(require,module,exports) {
+},{"./bundle-url":11}],3:[function(require,module,exports) {
 
         var reloadCSS = require('_css_loader');
         module.hot.dispose(reloadCSS);
         module.hot.accept(reloadCSS);
       
-},{"_css_loader":12}],11:[function(require,module,exports) {
+},{"_css_loader":7}],12:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -591,7 +591,7 @@ var Brackets = exports.Brackets = function Brackets(_ref6) {
     ) : null
   );
 };
-},{"hyperapp":11,"./topics.js":9,"./utils.js":8}],9:[function(require,module,exports) {
+},{"hyperapp":12,"./topics.js":9,"./utils.js":8}],9:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -656,15 +656,7 @@ var _topics2 = _interopRequireDefault(_topics);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var random = function random(a, b) {
-  var c = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
-
-  if (b === undefined) b = a, a = 1; // if only one argument is supplied, assume the lower limit is 1
-  var n = Math.floor((b - a + 1) * Math.random()) + a;
-  return n;
-};
-
-var randy = function randy(_ref) {
+var random = function random(_ref) {
   var _ref2 = _slicedToArray(_ref, 2),
       a = _ref2[0],
       b = _ref2[1];
@@ -673,7 +665,7 @@ var randy = function randy(_ref) {
 
   var n = Math.floor((b - a + 1) * Math.random()) + a;
   if (zero && n === 0) {
-    return randy([a, b], zero);
+    return random([a, b], zero);
   } else {
     return n;
   }
@@ -682,7 +674,7 @@ var randy = function randy(_ref) {
 var mix = exports.mix = function mix(topic, n) {
   return Array.from({ length: n }).map(function () {
     return _topics2.default[topic].numbers.map(function (x) {
-      return randy(x);
+      return random(x);
     });
   });
 };
@@ -731,11 +723,13 @@ var actions = {
       };
     };
   },
-  changeTopic: function changeTopic(topic) {
+  addTopic: function addTopic(topic) {
     return function (state) {
       return {
-        questions: (0, _utils.mix)(topic, state.numberOfQuestions),
-        topic: topic
+        topics: state.topics.concat({
+          key: topic,
+          questions: (0, _utils.mix)(topic, state.numberOfQuestions)
+        })
       };
     };
   },
@@ -779,10 +773,9 @@ var _utils = require('./utils.js');
 
 var state = {
   fullScreen: false,
-  topic: null,
+  topics: [],
   numberOfQuestions: 5,
   fontSize: 24,
-  questions: (0, _utils.mix)('mult', 5),
   showAnswer: false
 };
 
@@ -834,7 +827,7 @@ var view = function view(state, actions) {
           return (0, _hyperapp.h)(
             'button',
             { 'class': 'topic', onclick: function onclick() {
-                return actions.changeTopic(key);
+                return actions.addTopic(key);
               } },
             topic.name
           );
@@ -844,7 +837,7 @@ var view = function view(state, actions) {
     (0, _hyperapp.h)(
       'div',
       { 'class': 'main' },
-      state.topic ? (0, _hyperapp.h)(
+      state.topics.length > 0 ? (0, _hyperapp.h)(
         'div',
         null,
         (0, _hyperapp.h)(
@@ -911,21 +904,33 @@ var view = function view(state, actions) {
           )
         ),
         (0, _hyperapp.h)(
-          'h1',
-          { style: { fontSize: 1.5 * state.fontSize + 'px' } },
-          _topics2.default[state.topic].name
-        ),
-        (0, _hyperapp.h)(
-          'h3',
-          { style: { fontSize: 0.75 * state.fontSize + 'px' } },
-          _topics2.default[state.topic].intro
-        ),
-        (0, _hyperapp.h)(
           'ol',
-          { style: { fontSize: state.fontSize + 'px' }, id: 'questions' },
-          state.questions.map(function (numbers, i) {
-            return (0, _hyperapp.h)(_components.Question, {
-              topic: state.topic, numbers: numbers, showAnswer: state.showAnswer, key: i });
+          { id: 'topicQuestions' },
+          state.topics.map(function (_ref3) {
+            var key = _ref3.key,
+                questions = _ref3.questions;
+            return (0, _hyperapp.h)(
+              'li',
+              { 'class': 'topic' },
+              (0, _hyperapp.h)(
+                'h1',
+                { style: { fontSize: 1.5 * state.fontSize + 'px' } },
+                _topics2.default[key].name
+              ),
+              (0, _hyperapp.h)(
+                'h3',
+                { style: { fontSize: 0.75 * state.fontSize + 'px' } },
+                _topics2.default[key].intro
+              ),
+              (0, _hyperapp.h)(
+                'ol',
+                { style: { fontSize: state.fontSize + 'px' }, 'class': 'questions' },
+                questions.map(function (numbers, i) {
+                  return (0, _hyperapp.h)(_components.Question, {
+                    topic: key, numbers: numbers, showAnswer: state.showAnswer, key: key + i + Date.now });
+                })
+              )
+            );
           })
         )
       ) : (0, _hyperapp.h)(
@@ -1016,7 +1021,7 @@ var view = function view(state, actions) {
 };
 
 exports.default = view;
-},{"hyperapp":11,"./components.js":10,"./topics.js":9}],2:[function(require,module,exports) {
+},{"hyperapp":12,"./components.js":10,"./topics.js":9}],2:[function(require,module,exports) {
 'use strict';
 
 require('./css/index.scss');
@@ -1038,7 +1043,7 @@ var _view2 = _interopRequireDefault(_view);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var main = (0, _hyperapp.app)(_state2.default, _actions2.default, _view2.default, document.body);
-},{"./css/index.scss":3,"hyperapp":11,"./js/actions.js":4,"./js/state.js":5,"./js/view.js":6}],14:[function(require,module,exports) {
+},{"./css/index.scss":3,"hyperapp":12,"./js/actions.js":4,"./js/state.js":5,"./js/view.js":6}],18:[function(require,module,exports) {
 
 var global = (1, eval)('this');
 var OldModule = module.bundle.Module;
@@ -1058,7 +1063,7 @@ module.bundle.Module = Module;
 
 if (!module.bundle.parent && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
-  var ws = new WebSocket('ws://' + hostname + ':' + '61453' + '/');
+  var ws = new WebSocket('ws://' + hostname + ':' + '64624' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -1159,5 +1164,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.require, id);
   });
 }
-},{}]},{},[14,2])
+},{}]},{},[18,2])
 //# sourceMappingURL=/docs/e913560274129e0ebd9eb30ca8e503b3.map

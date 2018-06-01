@@ -299,7 +299,7 @@ template {
   display: none; }
 
 @media print {
-  header, footer, .actions {
+  header, footer, .actions, .controls {
     display: none; } }
 
 html {
@@ -420,41 +420,45 @@ header {
       color: #FFFFFF; }
     .main button i {
       margin-right: 0.2em; }
-  .main h1 {
-    color: #20375F;
-    margin-bottom: -0.6em; }
-    @media only screen and (max-width: 480px) {
-      .main h1 {
-        text-align: left; } }
-  .main h3 {
-    color: #696969;
-    font-style: italic;
-    font-weight: normal;
-    font-family: 'serif';
-    margin-bottom: -0.2em; }
-    @media only screen and (max-width: 480px) {
-      .main h3 {
-        text-align: left; } }
   .main strong {
     color: #20375F;
     font-size: 1.4em; }
-  .main ol {
-    border: #eee 1px solid;
+  .main li.topic {
+    list-style: none;
     padding: 0;
     list-style-position: inside;
     color: #696969;
     font-family: 'serif';
     text-align: left;
-    margin: 0; }
-    .main ol li {
-      margin: 0.4em 0; }
-      .main ol li .answer {
-        color: #B85258; }
-        @media only screen and (max-width: 480px) {
-          .main ol li .answer {
-            display: block; } }
+    margin: 0;
+    width: 33%;
+    float: left; }
+    .main li.topic ol {
+      padding: 0; }
+    .main li.topic li .answer {
+      color: #B85258; }
+      @media only screen and (max-width: 480px) {
+        .main li.topic li .answer {
+          display: block; } }
+    .main li.topic h1 {
+      color: #20375F;
+      font-family: "Nimbus Sans L", Helvetica Neue, Helvetica, "Liberation Sans", FreeSans, Arial, Sans-serif;
+      margin-bottom: -0.6em; }
+      @media only screen and (max-width: 480px) {
+        .main li.topic h1 {
+          text-align: left; } }
+    .main li.topic h3 {
+      color: #696969;
+      font-style: italic;
+      font-weight: normal;
+      font-family: 'serif';
+      margin-bottom: -0.2em; }
+      @media only screen and (max-width: 480px) {
+        .main li.topic h3 {
+          text-align: left; } }
 
 footer {
+  clear: left;
   background-color: #B85258;
   color: #FFFFFF;
   padding: 1em 4em 6em;

@@ -11,9 +11,13 @@ const actions = {
   toggleFullScreen: () => state => ({
     fullScreen: !state.fullScreen
   }),
-  changeTopic: (topic) => state => ({
-    questions: mix(topic,state.numberOfQuestions),
-    topic: topic
+  addTopic: topic => state => ({
+    topics: state.topics.concat(
+      {
+        key: topic,
+        questions: mix(topic,state.numberOfQuestions)
+      }
+      )
   }),
   fontSizeDown: n => state => ({ fontSize: state.fontSize - n }),
   fontSizeUp: n => state => ({ fontSize: state.fontSize + n }),

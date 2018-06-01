@@ -11,14 +11,14 @@ const view = (state, actions) => (
   <div  id='topics'>
    {
      Object.entries(topics).map( ([key,topic]) =>
-     <button class="topic" onclick={()=>actions.changeTopic(key)}>{topic.name}</button>
+     <button class="topic" onclick={()=>actions.addTopic(key)}>{topic.name}</button>
    )
    }
   </div>
   </header>
   : '' }
   <div class='main'>
-    { state.topic ?
+    { state.topics.length > 0 ?
     <div>
     <div class='actions'>
       <button onclick={ actions.mix }><i class="fas fa-sync-alt"></i>MIX</button>
@@ -26,7 +26,7 @@ const view = (state, actions) => (
       <button onclick={actions.toggleFullScreen}>{state.fullScreen ? 'Close Full Screen':'Full Screen'}</button>
       <button onclick={() => window.print()}><i class="fas fa-print"></i>Print</button>
     </div>
-    <div class='controls'>    
+    <div class='controls'>
       <button disabled={state.fontSize <= 8} onclick={() => actions.fontSizeDown(2)}>-</button>
       Font Size
       <button onclick={() => actions.fontSizeUp(2)}>+</button>
@@ -34,14 +34,21 @@ const view = (state, actions) => (
       Number of Questions
       <button onclick={() => actions.addQuestion() }>+</button>
     </div>
-    <h1 style={{fontSize: 1.5*state.fontSize+'px'}} >{ topics[state.topic].name }</h1>
-    <h3 style={{fontSize: 0.75*state.fontSize+'px'}}>{ topics[state.topic].intro }</h3>
-    <ol style={{fontSize: state.fontSize+'px'}} id='questions'>
-     {state.questions.map((numbers,i) => (
-       <Question
-       topic={state.topic} numbers={numbers} showAnswer={state.showAnswer} key={i} />
+    <ol id='topicQuestions'>
+     {state.topics.map(({key,questions}) => (
+       <li class='topic'>
+         <h1 style={{fontSize: 1.5*state.fontSize+'px'}} >{ topics[key].name }</h1>
+         <h3 style={{fontSize: 0.75*state.fontSize+'px'}}>{ topics[key].intro }</h3>
+         <ol style={{fontSize: state.fontSize+'px'}} class='questions'>
+          {questions.map((numbers,i) => (
+            <Question
+            topic={key} numbers={numbers} showAnswer={state.showAnswer} key={key+i+Date.now} />
+          ))}
+         </ol>
+       </li>
      ))}
     </ol>
+
     </div>
     : <div>
       <h1>Welcome to Maths DJ!</h1>
