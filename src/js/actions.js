@@ -3,8 +3,11 @@ import topics from './topics.js'
 
 const actions = {
   mix: () => state => ({
-    questions: mix(state.topic,state.numberOfQuestions)
-  }),
+      topics: state.topics.map(
+        topic => (Object.assign({}, topic, { questions: mix(topic.key,state.numberOfQuestions) }))
+      )
+    })
+    ,
   toggleShowAnswer: () => state => ({
     showAnswer: !state.showAnswer
   }),
@@ -23,11 +26,15 @@ const actions = {
   fontSizeUp: n => state => ({ fontSize: state.fontSize + n }),
   removeQuestion: () => state => ({
     numberOfQuestions: state.numberOfQuestions - 1,
-    questions: mix(state.topic,state.numberOfQuestions - 1)
+    topics: state.topics.map(
+      topic => (Object.assign({}, topic, { questions: mix(topic.key,state.numberOfQuestions -1) }))
+    )
   }),
   addQuestion: () => state => ({
     numberOfQuestions: state.numberOfQuestions + 1,
-    questions: mix(state.topic,state.numberOfQuestions + 1)
+    topics: state.topics.map(
+      topic => (Object.assign({}, topic, { questions: mix(topic.key,state.numberOfQuestions + 1) }))
+    )
   })
 };
 
