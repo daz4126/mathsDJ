@@ -97,14 +97,14 @@ header {
   }
 
   strong{
-    color: $blue;
+    color: $black;
     font-size: 1.4em;
   }
   li.topic {
     list-style: none;
     padding: 0;
     list-style-position: inside;
-    color: $grey;
+    color: $black;
     font-family: 'serif';
     text-align: left;
     margin: 0;
@@ -140,7 +140,7 @@ header {
     }
     }
     h3{
-      color: $grey;
+      color: $black;
       font-style: italic;
       font-weight: normal;
       font-family: 'serif';

@@ -4,7 +4,7 @@ import topics from './topics.js'
 const actions = {
   mix: () => state => ({
       topics: state.topics.map(
-        topic => (Object.assign({}, topic, { questions: mix(topic.key,state.numberOfQuestions) }))
+        topic => (Object.assign({}, topic, { questions: mix(topic.id,state.numberOfQuestions) }))
       )
     })
     ,

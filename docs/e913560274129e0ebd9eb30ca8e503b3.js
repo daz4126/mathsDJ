@@ -69,7 +69,7 @@ require = (function (modules, cache, entry) {
 
   // Override the current require with this new one
   return newRequire;
-})({16:[function(require,module,exports) {
+})({13:[function(require,module,exports) {
 var bundleURL = null;
 function getBundleURLCached() {
   if (!bundleURL) {
@@ -100,7 +100,7 @@ function getBaseURL(url) {
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 
-},{}],15:[function(require,module,exports) {
+},{}],12:[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -132,13 +132,13 @@ function reloadCSS() {
 
 module.exports = reloadCSS;
 
-},{"./bundle-url":16}],3:[function(require,module,exports) {
+},{"./bundle-url":13}],3:[function(require,module,exports) {
 
         var reloadCSS = require('_css_loader');
         module.hot.dispose(reloadCSS);
         module.hot.accept(reloadCSS);
       
-},{"_css_loader":15}],17:[function(require,module,exports) {
+},{"_css_loader":12}],11:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -424,7 +424,7 @@ function app(state, actions, view, container) {
     return element;
   }
 }
-},{}],12:[function(require,module,exports) {
+},{}],9:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -591,7 +591,7 @@ var Brackets = exports.Brackets = function Brackets(_ref6) {
     ) : null
   );
 };
-},{"hyperapp":17,"./topics.js":13,"./utils.js":11}],13:[function(require,module,exports) {
+},{"hyperapp":11,"./topics.js":10,"./utils.js":8}],10:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -640,7 +640,7 @@ var topics = {
 };
 
 exports.default = topics;
-},{"./components.js":12}],11:[function(require,module,exports) {
+},{"./components.js":9}],8:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -686,7 +686,7 @@ var coeff = exports.coeff = function coeff(a) {
 var plusorminus = exports.plusorminus = function plusorminus(n) {
   return n > 0 ? '+' : '-';
 };
-},{"./topics.js":13}],4:[function(require,module,exports) {
+},{"./topics.js":10}],4:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -706,7 +706,7 @@ var actions = {
     return function (state) {
       return {
         topics: state.topics.map(function (topic) {
-          return Object.assign({}, topic, { questions: (0, _utils.mix)(topic.key, state.numberOfQuestions) });
+          return Object.assign({}, topic, { questions: (0, _utils.mix)(topic.id, state.numberOfQuestions) });
         })
       };
     };
@@ -778,7 +778,7 @@ var actions = {
 };
 
 exports.default = actions;
-},{"./utils.js":11,"./topics.js":13}],5:[function(require,module,exports) {
+},{"./utils.js":8,"./topics.js":10}],6:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -796,7 +796,7 @@ var state = {
 };
 
 exports.default = state;
-},{"./utils.js":11}],6:[function(require,module,exports) {
+},{"./utils.js":8}],5:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1046,7 +1046,7 @@ var view = function view(state, actions) {
 };
 
 exports.default = view;
-},{"hyperapp":17,"./components.js":12,"./topics.js":13}],2:[function(require,module,exports) {
+},{"hyperapp":11,"./components.js":9,"./topics.js":10}],2:[function(require,module,exports) {
 'use strict';
 
 require('./css/index.scss');
@@ -1068,7 +1068,7 @@ var _view2 = _interopRequireDefault(_view);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var main = (0, _hyperapp.app)(_state2.default, _actions2.default, _view2.default, document.body);
-},{"./css/index.scss":3,"hyperapp":17,"./js/actions.js":4,"./js/state.js":5,"./js/view.js":6}],18:[function(require,module,exports) {
+},{"./css/index.scss":3,"hyperapp":11,"./js/actions.js":4,"./js/state.js":6,"./js/view.js":5}],14:[function(require,module,exports) {
 
 var global = (1, eval)('this');
 var OldModule = module.bundle.Module;
@@ -1088,7 +1088,7 @@ module.bundle.Module = Module;
 
 if (!module.bundle.parent && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
-  var ws = new WebSocket('ws://' + hostname + ':' + '52889' + '/');
+  var ws = new WebSocket('ws://' + hostname + ':' + '52918' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -1189,5 +1189,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.require, id);
   });
 }
-},{}]},{},[18,2])
+},{}]},{},[14,2])
 //# sourceMappingURL=/docs/e913560274129e0ebd9eb30ca8e503b3.map
