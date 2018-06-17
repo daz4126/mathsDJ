@@ -31,13 +31,13 @@ const actions = {
   removeQuestion: () => state => ({
     numberOfQuestions: state.numberOfQuestions - 1,
     topics: state.topics.map(
-      topic => (Object.assign({}, topic, { questions: mix(topic.key,state.numberOfQuestions -1) }))
+      topic => (Object.assign({}, topic, { questions: mix(topic.id,state.numberOfQuestions -1) }))
     )
   }),
   addQuestion: () => state => ({
     numberOfQuestions: state.numberOfQuestions + 1,
     topics: state.topics.map(
-      topic => (Object.assign({}, topic, { questions: mix(topic.key,state.numberOfQuestions + 1) }))
+      topic => (Object.assign({}, topic, { questions: mix(topic.id,state.numberOfQuestions + 1) }))
     )
   })
 };
