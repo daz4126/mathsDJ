@@ -316,14 +316,13 @@ body {
       text-align: center; } }
 
 header {
-  background: #20375F;
-  background: linear-gradient(#1a2c4c, #406ebe);
+  background: #222;
   padding: 0em 4em 0.4em; }
   @media only screen and (max-width: 480px) {
     header {
       padding: 0em 2em 0.4em; } }
   header h1 {
-    color: #B85258;
+    color: #FFFFFF;
     font-family: "Monoton", cursive;
     font-size: 72px;
     line-height: 1.2;
@@ -372,7 +371,7 @@ header {
         margin: 0 2% 0.4em 0; } }
     header button.topic:hover {
       background-color: yellow;
-      color: #20375F; }
+      color: #222; }
   header .controls {
     margin-top: 0.2em;
     color: #B85258; }
@@ -401,8 +400,8 @@ header {
     border: none;
     border-radius: 0;
     background: #FFFFFF;
-    color: #B85258;
-    border: 1px solid #B85258;
+    color: #222;
+    border: 1px solid #222;
     margin: 0 0.2em; }
     .main button::-moz-focus-inner {
       padding: 0;
@@ -416,8 +415,7 @@ header {
         width: 48%;
         margin: 0 2% 0.4em 0; } }
     .main button:hover {
-      background-color: #B85258;
-      color: #FFFFFF; }
+      background-color: yellow; }
     .main button i {
       margin-right: 0.2em; }
   .main strong {
@@ -431,7 +429,7 @@ header {
     font-family: 'serif';
     text-align: left;
     margin: 0;
-    width: 33%;
+    width: 50%;
     float: left; }
     .main li.topic ol {
       padding: 0; }
@@ -441,12 +439,40 @@ header {
         .main li.topic li .answer {
           display: block; } }
     .main li.topic h1 {
-      color: #20375F;
+      color: #222;
       font-family: "Nimbus Sans L", Helvetica Neue, Helvetica, "Liberation Sans", FreeSans, Arial, Sans-serif;
       margin-bottom: -0.6em; }
       @media only screen and (max-width: 480px) {
         .main li.topic h1 {
           text-align: left; } }
+      .main li.topic h1 button {
+        display: inline-block;
+        zoom: 1;
+        vertical-align: middle;
+        white-space: nowrap;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        line-height: normal;
+        -webkit-user-drag: none;
+        user-select: none;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0.4em 1em;
+        outline: none;
+        border: none;
+        border-radius: 0;
+        background: #FFFFFF;
+        color: #222;
+        border: 1px solid #222;
+        margin: 0 0.2em;
+        font-size: 10px; }
+        .main li.topic h1 button::-moz-focus-inner {
+          padding: 0;
+          border: 0; }
+        .main li.topic h1 button:hover {
+          background: #222;
+          color: yellow; }
     .main li.topic h3 {
       color: #696969;
       font-style: italic;
@@ -459,7 +485,7 @@ header {
 
 footer {
   clear: left;
-  background-color: #B85258;
+  background-color: #222;
   color: #FFFFFF;
   padding: 1em 4em 6em;
   text-align: left; }

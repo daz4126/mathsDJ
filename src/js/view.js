@@ -35,14 +35,14 @@ const view = (state, actions) => (
       <button onclick={() => actions.addQuestion() }>+</button>
     </div>
     <ol id='topicQuestions'>
-     {state.topics.map(({key,questions}) => (
-       <li class='topic'>
-         <h1 style={{fontSize: 1.5*state.fontSize+'px'}} >{ topics[key].name }</h1>
-         <h3 style={{fontSize: 0.75*state.fontSize+'px'}}>{ topics[key].intro }</h3>
+     {state.topics.map(({key,id,questions}) => (
+       <li class='topic' key={key}>
+         <h1 style={{fontSize: 1.5*state.fontSize+'px'}} >{ topics[id].name } <button onclick={ () => actions.removeTopic(key) }>x</button></h1>
+         <h3 style={{fontSize: 0.75*state.fontSize+'px'}}>{ topics[id].intro }</h3>
          <ol style={{fontSize: state.fontSize+'px'}} class='questions'>
           {questions.map((numbers,i) => (
             <Question
-            topic={key} numbers={numbers} showAnswer={state.showAnswer} key={key+i+Date.now} />
+            topic={id} numbers={numbers} showAnswer={state.showAnswer} key={key+i+Date.now()} />
           ))}
          </ol>
        </li>

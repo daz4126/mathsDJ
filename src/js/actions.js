@@ -17,10 +17,14 @@ const actions = {
   addTopic: topic => state => ({
     topics: state.topics.concat(
       {
-        key: topic,
+        key: topic+Date.now(),
+        id: topic,
         questions: mix(topic,state.numberOfQuestions)
       }
       )
+  }),
+  removeTopic: key => state => ({topics: state.topics.filter(
+    topic => topic.key !== key)
   }),
   fontSizeDown: n => state => ({ fontSize: state.fontSize - n }),
   fontSizeUp: n => state => ({ fontSize: state.fontSize + n }),
